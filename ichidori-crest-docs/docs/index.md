@@ -34,7 +34,7 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
 === "HAT Only"
     Use iChidori-Crest board standalone
 
-    <iframe src="../viewer1.html" width="100%" height="460" frameborder="0"></iframe>
+    <iframe src="viewer1.html" width="100%" height="460" frameborder="0"></iframe>
 === "HAT with Raspberry Pi"
     Mount on a Raspberry Pi 4/5 for a self-contained GNSS/Network system.
     ![HAT with Raspberry Pi](images/hat_variant_2.jpg){ width="700" }
