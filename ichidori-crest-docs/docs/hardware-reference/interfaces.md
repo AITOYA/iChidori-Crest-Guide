@@ -67,15 +67,15 @@ Connector type: 52-pin Mini PCIe edge connector, 0.8 mm pitch
 
 Connector type: Conn_01×06, 2.54 mm pin header
 
-<div style="display: flex; gap: 2rem; align-items: flex-start;" markdown>
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;" markdown>
 
-<div markdown>
+<div style="min-width: 140px; max-width: 200px;" markdown>
 
-![J8 Header](../images/j8_header.png){ width="265" }
+![J8 Header](../images/j8_header.png){ width="140" }
 
 </div>
 
-<div markdown>
+<div style="flex: 1; min-width: 260px;" markdown>
 
 | Pin | Signal | Description |
 |-----|--------|-------------|
