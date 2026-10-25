@@ -6,9 +6,8 @@
 
 ## Board Layout
 
-![Block diagram](../images/board-layout-demo.png){ width="400" .center}
+![Block diagram](../images/board-layout-demo.png){ width="700" .center}
 
-- Status: On working...
 
 ## Block Diagram
 

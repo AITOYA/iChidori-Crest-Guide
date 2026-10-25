@@ -61,15 +61,13 @@ nav:
     - Specifications: hardware-reference/specifications.md
   - Getting Started:
     - Basic Setup: getting-started/basic-setup.md
-    - SD Logging: getting-started/sd-logging.md
-    - Raspberry Pi Connection: getting-started/pi-connect.md
-    - LTE Setup: getting-started/lte-setup.md
-    - Remote Access (Tailscale): getting-started/remote-access.md
+    - RTK Rover: getting-started/rtk-rover.md
+    - Data Logging: getting-started/sd-logging.md
+    - Connect to a Raspberry Pi: getting-started/pi-connect.md
+    - LTE Connectivity: getting-started/lte-setup.md
+    #- Remote Access (Tailscale): getting-started/remote-access.md
   - Application Examples:
-    - CLAS-MADOCA: application-examples/clas-madoca.md
-    #- GNSS Data Logger: application-examples/data-logger.md
-    #- LTE Sleep Mode: application-examples/lte-sleep.md
-    #- Two-Pi Relay: application-examples/two-pi-relay.md
+    #- CLAS-MADOCA: application-examples/clas-madoca.md
   - Troubleshooting: troubleshooting.md
 
 extra_css:
