@@ -2,7 +2,7 @@
 
 **iChidori-Crest** is a compact Raspberry Pi HAT designed for high-precision GNSS positioning and embedded applications. It integrates a Septentrio mosaic-G5 GNSS receiver module with an mPCIe interface for an LTE modem, onboard power management, SD card logging, and additional connectivity and expansion interfaces.
 
-Designed for Raspberry Pi 4 and Raspberry Pi 5, iChidori-Crest provides a flexible hardware platform for RTK positioning, remote monitoring, and GNSS-based applications. It is available in variants — P1, P3, P3H, and P6 — sharing the same board hardware while offering different GNSS receiver capabilities.
+Designed for Raspberry Pi 4/5, iChidori-Crest provides a flexible hardware platform for RTK positioning, remote monitoring, and GNSS-based applications. It is available in variants — P1, P3, P3H, and P6 — sharing the same board hardware while offering different GNSS receiver capabilities.
 
 ![iChidori-Crest Board](images/board-top.png){ width="820", style="margin-left: 0px;"}
 
@@ -25,7 +25,7 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
 | **GNSS** | Septentrio mosaic-G5 — multi-constellation, multi-frequency GNSS receiver  |
 | **Antenna** | Main and auxiliary antenna connections |
 | **LTE** | PCI Express Mini Card slot for an LTE modem, with an onboard nano-SIM socket |
-| **Host** | Raspberry Pi 4 / 5 via the 40-pin header |
+| **Host** | Raspberry Pi 4/5 via the 40-pin GPIO Header |
 | **Power** | USB-C 5V, External VIN 6–24V, or Pi 5V rail |
 
 
@@ -33,11 +33,10 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
 
 === "HAT Only"
     Use iChidori-Crest board standalone
-
-    <iframe src="viewer1.html" width="100%" height="460" frameborder="0"></iframe>
+    ![HAT with Raspberry Pi](images/hat_variant_1.jpg){ width="850" }
 === "HAT with Raspberry Pi"
     Mount on a Raspberry Pi 4/5 for a self-contained GNSS/Network system.
-    ![HAT with Raspberry Pi](images/hat_variant_2.jpg){ width="700" }
+    ![HAT with Raspberry Pi](images/hat_variant_2.jpg){ width="850" }
 === "HAT + Pi + LTE"
     Full remote deployment — Pi connects to internet via LTE, streams GNSS data.
     ![HAT with Raspberry Pi](images/hat_variant_3.jpg){ width="800"}

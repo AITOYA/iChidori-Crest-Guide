@@ -1,15 +1,15 @@
 ## 40-Pin Header (J1)
 
-iChidori-Crest connects to the Raspberry Pi via the standard 40-pin header.
+iChidori-Crest connects to the Raspberry Pi via the standard 40-pin GPIO header.
 
 ![HAT with Raspberry Pi](../images/hat_40_pin_header.jpg){ width="790" }
 
 
 Connector type: 2×20, 2.54 mm Pin socket
 
-Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin header
+Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin GPIO header
 
-### 40-Pin Header Assignments
+### 40-Pin GPIO Header Assignments
 
 ![40-pin Header](../images/40pin_header_1.png){ width="800" }
 
@@ -25,24 +25,39 @@ Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin header
 
 !!! note "Serial port configuration"
     Raspberry Pi 4/5 has UART0–UART5, but most are disabled by default and require additional configuration.
-    
-    For example to enable Pi UART GPIO14/15 to communicate with Mosaic G5 COM1:
-    
-    1. Run `sudo raspi-config` → Interface Options → Serial Port
+
+    To enable UART on GPIO14/GPIO15 (TXD/RXD) for mosaic-G5 COM1:
+
+    1. Run `sudo raspi-config`
     2. Select **Interface Options** → **Serial Port**
     3. Set **Login shell over serial** → **No**
     4. Set **Serial port hardware** → **Yes**
     5. Exit and reboot
 
-    Identify the UART Device: After reboot, check the serial device aliases.
+    After reboot, verify which UART type is assigned to the primary serial port:
+
     ```bash
-    ls -l /dev/serial*
+    ls -l /dev/serial0
     ```
-    List available UART devices:
+
+    On Raspberry Pi 4/5, `/dev/ttyAMA*` represents PL011 UARTs and `/dev/ttyS*` represents the mini UART.
+
+    **Use a PL011 UART (`/dev/ttyAMA*`) for communication with the mosaic-G5.**  
+    PL011 UARTs have a dedicated clock and provide stable baud rates at higher speeds. The mini UART (`/dev/ttyS0`) shares the CPU clock and is not recommended for GNSS applications.
+
+    If `serial0` points to `/dev/ttyS0`, reassign it to PL011 by adding the following line to `/boot/firmware/config.txt`:
+
+    ```text
+    dtoverlay=disable-bt
+    ```
+
+    This disables Bluetooth and frees the PL011 UART for GPIO14/GPIO15. Reboot and verify again:
+
     ```bash
-    ls -l /dev/ttyAMA* /dev/ttyS*
+    ls -l /dev/serial0
     ```
-    On Raspberry Pi 4/5, `/dev/ttyAMA*` represents PL011 UARTs; `/dev/ttyS*` represents mini UARTs.
+
+    Confirm that `serial0` now points to `/dev/ttyAMA0` before proceeding.
 
 ### Power Pins
 
@@ -188,5 +203,33 @@ A QWIC connector is provided for expansion I2C communication.
 | 4 | SCL |
 
 </div>
+
+</div>
+
+<div markdown style="display: flex; justify-content: space-between;">
+
+**Back:** [← Overview](overview.md)
+
+**Next:** [Specifications →](specifications.md)
+
+</div>
+
+---
+
+## Quick Navigation
+
+<div class="grid cards" markdown>
+
+- :material-home: **[Home](../index.md)**  
+  Welcome and project overview
+
+- :material-play-circle: **[Getting Started](../getting-started/basic-setup.md)**  
+  Step-by-step setup from unboxing to first fix
+
+- :material-antenna: **[Application Examples](../application-examples/clas-madoca.md)**  
+  RTK, data logger, RxTool experiments
+
+- :material-wrench: **[Troubleshooting](../troubleshooting.md)**  
+  Common issues and fixes
 
 </div>

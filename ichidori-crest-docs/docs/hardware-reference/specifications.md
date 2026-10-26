@@ -93,3 +93,31 @@ The table below summarizes the key differences across the full mosaic-G5 family 
     | Size | 22.8 x 16.4 x 2.4 mm |
     | Weight | 2.2 g |
 
+
+<div markdown style="display: flex; justify-content: space-between;">
+
+**Back:** [← Interfaces](interfaces.md)
+
+**Next:** [Getting Started →](../getting-started/basic-setup.md)
+
+</div>
+
+---
+
+## Quick Navigation
+
+<div class="grid cards" markdown>
+
+- :material-home: **[Home](../index.md)**  
+  Welcome and project overview
+
+- :material-play-circle: **[Getting Started](../getting-started/basic-setup.md)**  
+  Step-by-step setup from unboxing to first fix
+
+- :material-antenna: **[Application Examples](../application-examples/clas-madoca.md)**  
+  RTK, data logger, RxTool experiments
+
+- :material-wrench: **[Troubleshooting](../troubleshooting.md)**  
+  Common issues and fixes
+
+</div>
