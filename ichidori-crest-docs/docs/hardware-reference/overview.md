@@ -8,6 +8,7 @@
 
 ![Block diagram](../images/board-layout-demo.png){ width="700" .center}
 
+![Block diagram](../images/hat_dimension.png){ width="800" .center}
 
 ## Block Diagram
 

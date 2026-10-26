@@ -2,20 +2,28 @@
 
 ### Overview
 
- In this article, we use the built-in **NTRIP Forwarder** in RxControl to stream RTCM3 correction data directly to the receiver and achieve an RTK Fixed solution.
+This guide explains how to configure the **mosaic-G5** as an RTK rover using the built-in **NTRIP Forwarder** in Septentrio RxControl.
+
+The NTRIP Forwarder connects to an NTRIP caster and forwards RTCM3 correction data to the receiver. With a suitable GNSS antenna setup and valid correction data, the rover can achieve an **RTK Fixed** solution.
+
+By the end of this guide, the receiver will be connected to an NTRIP correction source, and its positioning status will be checked in RxControl.
 
 ---
 
 ### Setup Requirements
+Before starting, prepare the following:
 
-- iChidori-Crest connected to PC via USB-C cable
-- RxControl connection established (see [Basic Setup](basic-setup.md))
-- Active NTRIP caster credentials and mountpoint
-- Ensure that a GNSS antenna (or two, for Dual Antenna mode) connected to iChidori-Crest and placed antenna in open sky view
+- iChidori-Crest connected to PC using USB Type-C cable.
+- RxControl installed, with a connection to the mosaic-G5 established. See [Basic Setup](basic-setup.md) for the initial configuration.
+- An active NTRIP caster account, including the server address, port, and mountpoint where required.
+- Ensure that a GNSS antenna (or two, for Dual Antenna mode) connected to iChidori-Crest and placed antenna in open-sky view
+
+!!! note "Correction Service"
+    The caster address, port, mountpoint, and authentication requirements depend on the correction service being used. The settings below are an example and should be replaced if a different NTRIP service is used.
 
 ---
 
-### Open the NTRIP Forwarder in RxControl
+### Configure the NTRIP Forwarder
 
 With the iChidori-Crest connected in RxControl, navigate to the RXControl NTRIP Forwarder:
 
@@ -31,13 +39,15 @@ Enter NTRIP caster details:
 
 Click **Connect** to begin streaming correction data to the receiver.
 
-<!-- Screenshot: RxControl NTRIP forwarder settings -->
+![RxControl-NTRIP Setting](../images/rover_rtk_1.png){ width=850"}
 
 ---
 
-### Verify RTK Fixed
+### Verify the RTK Solution
 
-Once corrections are streaming, monitor the receiver status in RxControl. The position mode indicator will transition through the following states:
+After connecting the NTRIP Forwarder, monitor the positioning status in RxControl.
+
+The receiver may initially report a standalone solution while acquiring satellites or before correction data is applied. As valid corrections become available, the solution may progress to RTK Float and then RTK Fixed.
 
 | Status | Description |
 |---|---|
@@ -47,20 +57,23 @@ Once corrections are streaming, monitor the receiver status in RxControl. The po
 | RTK Float | Corrections received, ambiguity not resolved |
 | **RTK Fixed** | **Full RTK solution — centimeter-level accuracy** ✓ |
 
-<!-- Screenshot: RxControl showing RTK Fixed status -->
+Wait for the receiver to reach RTK Fixed and check that the solution remains stable before proceeding with further evaluation.
 
-Wait for the status to reach **RTK Fixed** before proceeding.
+![RxControl-NTRIP Setting](../images/rover_rtk_2.png
+){ width=850"}
 
 ---
 
 ### Summary
 
-In this test, we used the built-in NTRIP forwarder in RxControl to stream RTCM3 correction data to the mosaic-G5 and confirmed an RTK Fixed solution. This is the quickest way to verify rover operation directly from a PC.
+The mosaic-G5 has been configured as an RTK rover using the NTRIP Forwarder in RxControl. After connecting to the correction service, the receiver's positioning status can be monitored to confirm whether an RTK Fixed solution has been achieved.
+
+This method provides a straightforward way to evaluate rover operation directly from a PC before integrating the correction stream into a larger system.
 
 !!! tip
-    RxControl's NTRIP forwarder is convenient for quick evaluation. For TCP/IP-based correction streaming or more advanced data link configurations, use the **Data Link Tool** included in RxTools.
+    The RxControl NTRIP Forwarder is convenient for initial testing. For more advanced correction-data routing or network configurations, consider the **Data Link Tools** included in RxTools.
 
-In the next test, we will log receiver data and evaluate positioning performance in detail using the **SBF Analyzer Tool**.
+The next guide covers receiver data logging and the analysis of recorded GNSS data.
 
 
 

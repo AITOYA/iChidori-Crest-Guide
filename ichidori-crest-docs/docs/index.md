@@ -40,6 +40,18 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
 === "HAT + Pi + LTE"
     Full remote deployment — Pi connects to internet via LTE, streams GNSS data.
     ![HAT with Raspberry Pi](images/hat_variant_3.jpg){ width="800"}
+
+
+## Support Documents
+
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="font-size: 1.5rem;">📄</span>
+    <span>iChidori-Crest Hardware Reference Manual</span>
+  </div>
+    <a href="documents/iChidori_Crest_Hardware_Reference_Manual_EN.pdf" download style="background: #1976d2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.85rem;">DOWNLOAD</a>
+</div>
+
 ---
 
 ## Quick Navigation

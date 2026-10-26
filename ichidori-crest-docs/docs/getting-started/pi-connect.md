@@ -2,13 +2,11 @@
 
 ## Overview
 
-So far in this artical series, we have been working with the iChidori-Crest connected to a PC for quick evaluation. In this article, we expand to the **iChidori-Crest + Raspberry Pi**. The iChidori-Crest interfaces with the Raspberry Pi via the 40-pin GPIO header. For pin mapping details, see [40-Pin Header Assignments](../hardware-reference/interfaces.md#40-pin-header-assignments).
+So far in this guise series, we have been working with the iChidori-Crest connected to a PC for quick evaluation. In this article, we expand to the **iChidori-Crest + Raspberry Pi**. The iChidori-Crest interfaces with the Raspberry Pi via the 40-pin GPIO header. For pin mapping details, see [40-Pin Header Assignments](../hardware-reference/interfaces.md#40-pin-header-assignments).
 
 We will explore the USB interface of the mosaic G5 module this time. The Pi interfaces with the mosaic-G5 via USB, and we use RTKLIB `str2str` to stream NTRIP corrections to the receiver and try to achieve an RTK Fixed solution. 
 
 ![Connect to a Pi  — setup](../images/connect_pi_setup.png){ width="800" }
-
-## Setup Requirement
 
 ## Step 1 — Configure mosaic-G5 USB Output
 
@@ -118,5 +116,19 @@ RTK Fixed GGA output:
     # Log SBF from ttyACM1
     ~/Projects/RTKLIB/app/str2str/gcc/str2str -in serial://ttyACM1:115200 -out file://<path/to/output>.sbf
     ```
+
+## Summary
+
+This article demonstrated how to use the **iChidori-Crest + Raspberry Pi** as an RTK rover, receiving NTRIP corrections over the network and achieving a centimeter-level RTK Fixed solution.
+
+The procedure covered:
+
+1. Configuring the mosaic-G5 USB output for NMEA and SBF data streams for data logging purpose.
+2. Verifying USB serial port detection on the Raspberry Pi.
+3. Forwarding RTCM3 corrections from an NTRIP caster to the mosaic-G5 using `str2str`.
+4. Monitoring NMEA GGA output to confirm RTK Fixed status.
+
+With RTK Fixed achieved, the iChidori-Crest is ready for field deployment in applications requiring centimeter-level positioning accuracy.
+
 
 **Next:** [LTE Connectivity with the iChidori-Crest →](lte-setup.md)
