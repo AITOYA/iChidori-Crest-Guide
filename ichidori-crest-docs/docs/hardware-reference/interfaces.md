@@ -67,9 +67,14 @@ Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin GPIO header
 | 6, 9, 14, 20, 25, 30, 34, 39 | GND |
 
 ## 52-Pin mPCIe Slot (J2)
-iChidori-Crest provides a standard Mini PCIe (mPCIe) slot for LTE modem modules.
 
-Connector type: 52-pin Mini PCIe edge connector, 0.8 mm pitch
+iChidori-Crest provides a standard Mini PCIe (mPCIe) slot for LTE modems.
+
+| | |
+|---|---|
+| **Connector** | Attend Technology 119A-80A00-R02 |
+| **Type** | 52-pin Mini PCIe edge connector, 0.8 mm pitch |
+| **Retention** | 119A-NUT-80-R02 standoff nut, secured with M2×0.4 screw, 4.0 mm length |
 
 ![mPCIe Slot](../images/hat_mpcie_slot.png){ width="700" }
 
@@ -135,7 +140,7 @@ An internal 2-port USB hub routes the single connector to two independent device
 
 ## GNSS Antenna Connectors
 
-iChidori-Crest provides two MMCX antenna ports for the mosaic-G5 receiver.
+iChidori-Crest provides two MMCX antenna connectors for the mosaic-G5 receiver.
 
 <div style="margin-left: 12px;" markdown> 
 ![GNSS Antenna Connectors](../images/ant_mmcx.png){ width="400" }
@@ -155,7 +160,7 @@ iChidori-Crest is offered in variants that differ in antenna capability:
 | P1, P3 | Single-antenna only |
 | P3H, P6 | Single-antenna or dual-antenna (heading) |
 
-Use the following commands to check or configure the antenna mode (needs to be done only once):
+Use the following commands to check or configure the antenna mode:
 
 - `getFrontendMode` — query the current antenna mode
 - `setFrontendMode, SingleAnt` — configure single-antenna mode at the next reboot
@@ -180,10 +185,10 @@ The board provides a Nano SIM socket for the LTE module.
 ![SIM Card Connector](../images/sim_con.png){ width="400" }
 
 !!! note "SIM slot on the LTE card"
-    If the installed LTE card has its own SIM slot, the SIM can be inserted directly into that slot instead of the Nano SIM socket on the HAT. This allows SIM sizes other than Nano (for example Micro or Mini, depending on the card) to be used. The supported SIM types therefore depend on the LTE card in use.
+    If the installed LTE card has its own SIM slot, the SIM can be inserted directly into that slot instead of the Nano SIM socket on the iChidori-Crest. This allows SIM sizes other than Nano (for example Micro or Mini, depending on the card) to be used. The supported SIM types therefore depend on the LTE card in use.
 
-## QWIC Connector (J11)
-A QWIC connector is provided for expansion I2C communication.
+## QWIIC Connector (J11)
+A QWIIC connector is provided for expansion I2C communication.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start;" markdown>
 

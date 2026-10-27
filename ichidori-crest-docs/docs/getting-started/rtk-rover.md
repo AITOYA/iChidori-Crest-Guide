@@ -68,7 +68,7 @@ Wait for the receiver to reach RTK Fixed and check that the solution remains sta
 
 The mosaic-G5 has been configured as an RTK rover using the NTRIP Forwarder in RxControl. After connecting to the correction service, the receiver's positioning status can be monitored to confirm whether an RTK Fixed solution has been achieved.
 
-This method provides a straightforward way to evaluate rover operation directly from a PC before integrating the correction stream into a larger system.
+This method provides a straightforward way to evaluate rover operation directly from a PC before integrating the correction stream into a project.
 
 !!! tip
     The RxControl NTRIP Forwarder is convenient for initial testing. For more advanced correction-data routing or network configurations, consider the **Data Link Tools** included in RxTools.

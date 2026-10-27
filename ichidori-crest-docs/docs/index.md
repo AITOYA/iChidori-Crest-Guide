@@ -14,19 +14,18 @@ Compared with the mosaic-X5, mosaic-G5 offers a **60% smaller module footprint a
 
 These capabilities make mosaic-G5 well suited for compact RTK systems, robotics, autonomous platforms, and other applications where positioning performance, reliability, size, and power efficiency are critical.
 
-
-
 ---
 
 ## What's on the Board
 
 | Component | Description |
 |-----------|-------------|
-| **GNSS** | Septentrio mosaic-G5 — multi-constellation, multi-frequency GNSS receiver  |
-| **Antenna** | Main and auxiliary antenna connections |
-| **LTE** | PCI Express Mini Card slot for an LTE modem, with an onboard nano-SIM socket |
-| **Host** | Raspberry Pi 4/5 via the 40-pin GPIO Header |
-| **Power** | USB-C 5V, External VIN 6–24V, or Pi 5V rail |
+| **GNSS Module** | Septentrio mosaic-G5 — multi-constellation, multi-frequency GNSS receiver  |
+| **Antenna Connectors** | Main and auxiliary MMCX antenna connections |
+| **LTE mPCIe Slot** | PCI Express Mini Card slot for an LTE modem, with an onboard nano-SIM socket |
+| **MicroSD Card Slot** | On-board microSD slot for GNSS data logging directly to removable storage |
+| **40-Pin GPIO Header** | Standard Raspberry Pi HAT connector — fits Raspberry Pi 4 and 5 |
+| **Power Supply** | USB-C 5V, External VIN 6–24V, or Pi 5V rail |
 
 
 ## Board Variants
@@ -49,7 +48,7 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
     <span style="font-size: 1.5rem;">📄</span>
     <span>iChidori-Crest Hardware Reference Manual</span>
   </div>
-    <a href="documents/iChidori_Crest_Hardware_Reference_Manual_EN.pdf" download style="background: #1976d2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.85rem;">DOWNLOAD</a>
+    <a href="documents/iChidori_Crest_Hardware_Reference_Manual_EN.pdf" download style="background: #1976d2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.85rem; white-space: nowrap; flex-shrink: 0;">DOWNLOAD</a>
 </div>
 
 ---

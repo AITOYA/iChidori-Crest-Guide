@@ -16,17 +16,6 @@
 | Input — Pi rail | 5V via 40-pin header |
 
 ## GNSS — mosaic-G5
-The table below summarizes the key differences across the full mosaic-G5 family for reference.
-
-| Feature | P1 | P3 | P3H | P6 |
-|---------|----|----|-----|----|
-| Frequency Bands | L1/L2/L5 (3-band) | L1/L2/L5/L6 (4-band) | L1/L2/L5/L6 (4-band) | L1/L2/L5/L6 (4-band) |
-| Heading Support | — | — | Supported | Supported |
-| Update Rate (Position) | 5 Hz | 20 Hz | 20 Hz | 100 Hz |
-| Update Rate (RTK + Attitude) | — | — | 20 Hz | 50 Hz |
-| Tracking Channels | 789 | 789 | 789 | 789 |
-| Interfaces | 2×UART, USB 2.0, GPIO, PPS1/2 | 2×UART, USB 2.0, GPIO, PPS1/2, EVTA/B | 2×UART, USB 2.0, GPIO, PPS1/2, EVTA/B | 2×UART, USB 2.0, GPIO, PPS1/2, EVTA/B |
-| Typical Power | 0.44 W | 0.44 W | 0.6 W | 0.44–0.6 W |
 
 === "mosaic-G5 P1 Features"
 
@@ -93,6 +82,8 @@ The table below summarizes the key differences across the full mosaic-G5 family 
     | Size | 22.8 x 16.4 x 2.4 mm |
     | Weight | 2.2 g |
 
+
+---
 
 <div markdown style="display: flex; justify-content: space-between;">
 

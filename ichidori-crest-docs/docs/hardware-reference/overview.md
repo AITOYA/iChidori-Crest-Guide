@@ -15,7 +15,7 @@
 <!-- TODO: insert block diagram image -->
 ![Block diagram](../images/block-diagram.png)
 
-## LTE Modules Tested
+## LTE Modems Tested
 
 The iChidori-Crest has been tested with the following LTE modems:
 

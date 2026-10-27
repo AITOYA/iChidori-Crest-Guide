@@ -59,6 +59,7 @@ nav:
     - Overview: hardware-reference/overview.md
     - Interfaces: hardware-reference/interfaces.md
     - Specifications: hardware-reference/specifications.md
+    - Appendix: hardware-reference/appendix.md
   - Getting Started:
     - Basic Setup: getting-started/basic-setup.md
     - RTK Rover: getting-started/rtk-rover.md
