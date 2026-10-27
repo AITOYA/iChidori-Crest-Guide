@@ -1,0 +1,1690 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Configuration & Getting Started Guide for iChidori-Crest HAT — Raspberry Pi HAT with Septentrio mosaic-G5 GNSS and LTE mPCIe">
+      
+      
+        <meta name="author" content="Aitoya Works">
+      
+      
+        <link rel="canonical" href="https://aitoya.github.io/iChidori-Crest-Guide/hardware-reference/interfaces/">
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../specifications/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Interfaces - iChidori-Crest</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#40-pin-header-j1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="iChidori-Crest" class="md-header__button md-logo" aria-label="iChidori-Crest" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iChidori-Crest
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interfaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AITOYA/iChidori-Crest-Guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Hardware Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/basic-setup/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../application-examples/clas-madoca/" class="md-tabs__link">
+          
+  
+  
+  Application Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Troubleshooting
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="iChidori-Crest" class="md-nav__button md-logo" aria-label="iChidori-Crest" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    iChidori-Crest
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AITOYA/iChidori-Crest-Guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#40-pin-header-j1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40-Pin Header (J1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="40-Pin Header (J1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#40-pin-gpio-header-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40-Pin GPIO Header Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uart-interfaces-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UART Interfaces Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Pins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-pin-mpcie-slot-j2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        52-Pin mPCIe Slot (J2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="52-Pin mPCIe Slot (J2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-pin-mpcie-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        52-Pin mPCIe Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion-6-pin-header-j8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expansion 6-Pin Header (J8)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-device-interface-j5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB device Interface (J5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss-antenna-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Antenna Connectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GNSS Antenna Connectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antenna-mode-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna Mode Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sd-logging-j4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SD Logging (J4)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sim-card-j10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIM Card (J10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qwiic-connector-j11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QWIIC Connector (J11)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/basic-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/rtk-rover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Rover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/sd-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/pi-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to a Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/lte-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LTE Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Application Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application-examples/clas-madoca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAS-MADOCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#40-pin-header-j1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40-Pin Header (J1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="40-Pin Header (J1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#40-pin-gpio-header-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40-Pin GPIO Header Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uart-interfaces-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UART Interfaces Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Pins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-pin-mpcie-slot-j2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        52-Pin mPCIe Slot (J2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="52-Pin mPCIe Slot (J2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-pin-mpcie-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        52-Pin mPCIe Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion-6-pin-header-j8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expansion 6-Pin Header (J8)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-device-interface-j5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB device Interface (J5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss-antenna-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Antenna Connectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GNSS Antenna Connectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antenna-mode-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna Mode Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sd-logging-j4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SD Logging (J4)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sim-card-j10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIM Card (J10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qwiic-connector-j11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QWIIC Connector (J11)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Interfaces</h1>
+
+<h2 id="40-pin-header-j1">40-Pin Header (J1)<a class="headerlink" href="#40-pin-header-j1" title="Permanent link">&para;</a></h2>
+<p>iChidori-Crest connects to the Raspberry Pi via the standard 40-pin GPIO header.</p>
+<p><img alt="HAT with Raspberry Pi" src="../../images/hat_40_pin_header.jpg" width="790" /></p>
+<p>Connector type: 2×20, 2.54 mm Pin socket</p>
+<p>Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin GPIO header</p>
+<h3 id="40-pin-gpio-header-assignments">40-Pin GPIO Header Assignments<a class="headerlink" href="#40-pin-gpio-header-assignments" title="Permanent link">&para;</a></h3>
+<p><img alt="40-pin Header" src="../../images/40pin_header_1.png" width="800" /></p>
+<p><img _="," alt="40-pin Header" src="../../images/40pin_header_2.png" style="margin-left: 8px;" width="790" /></p>
+<h3 id="uart-interfaces-summary">UART Interfaces Summary<a class="headerlink" href="#uart-interfaces-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Raspberry Pi</th>
+<th>Mosaic G5</th>
+<th>LTE Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G5 UART</td>
+<td>UART0/1 (GPIO14/15)</td>
+<td>COM1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>G5 UART</td>
+<td>UART4 (GPIO8/9/10/11)</td>
+<td>COM2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>LTE UART</td>
+<td>UART3 (GPIO4/5/6/7)</td>
+<td>—</td>
+<td>UART</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Serial port configuration</p>
+<p>Raspberry Pi 4/5 has UART0–UART5, but most are disabled by default and require additional configuration.</p>
+<p>To enable UART on GPIO14/GPIO15 (TXD/RXD) for mosaic-G5 COM1:</p>
+<ol>
+<li>Run <code>sudo raspi-config</code></li>
+<li>Select <strong>Interface Options</strong> → <strong>Serial Port</strong></li>
+<li>Set <strong>Login shell over serial</strong> → <strong>No</strong></li>
+<li>Set <strong>Serial port hardware</strong> → <strong>Yes</strong></li>
+<li>Exit and reboot</li>
+</ol>
+<p>After reboot, verify which UART type is assigned to the primary serial port:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/dev/serial0
+</code></pre></div>
+<p>On Raspberry Pi 4/5, <code>/dev/ttyAMA*</code> represents PL011 UARTs and <code>/dev/ttyS*</code> represents the mini UART.</p>
+<p><strong>Use a PL011 UART (<code>/dev/ttyAMA*</code>) for communication with the mosaic-G5.</strong><br />
+PL011 UARTs have a dedicated clock and provide stable baud rates at higher speeds. The mini UART (<code>/dev/ttyS0</code>) shares the CPU clock and is not recommended for GNSS applications.</p>
+<p>If <code>serial0</code> points to <code>/dev/ttyS0</code>, reassign it to PL011 by adding the following line to <code>/boot/firmware/config.txt</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dtoverlay=disable-bt
+</code></pre></div>
+<p>This disables Bluetooth and frees the PL011 UART for GPIO14/GPIO15. Reboot and verify again:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/dev/serial0
+</code></pre></div>
+<p>Confirm that <code>serial0</code> now points to <code>/dev/ttyAMA0</code> before proceeding.</p>
+</div>
+<h3 id="power-pins">Power Pins<a class="headerlink" href="#power-pins" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2, 4</td>
+<td>5V from Pi</td>
+</tr>
+<tr>
+<td>6, 9, 14, 20, 25, 30, 34, 39</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-pin-mpcie-slot-j2">52-Pin mPCIe Slot (J2)<a class="headerlink" href="#52-pin-mpcie-slot-j2" title="Permanent link">&para;</a></h2>
+<p>iChidori-Crest provides a standard Mini PCIe (mPCIe) slot for LTE modems.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Connector</strong></td>
+<td>Attend Technology 119A-80A00-R02</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>52-pin Mini PCIe edge connector, 0.8 mm pitch</td>
+</tr>
+<tr>
+<td><strong>Retention</strong></td>
+<td>119A-NUT-80-R02 standoff nut, secured with M2×0.4 screw, 4.0 mm length</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="mPCIe Slot" src="../../images/hat_mpcie_slot.png" width="700" /></p>
+<h3 id="52-pin-mpcie-assignments">52-Pin mPCIe Assignments<a class="headerlink" href="#52-pin-mpcie-assignments" title="Permanent link">&para;</a></h3>
+<p><img alt="mPCIe Pin Assignment" src="../../images/mpcie_header_1.png" width="800" />
+<img alt="mPCIe Pin Assignment" src="../../images/mpcie_header_2.png" width="800" /></p>
+<h2 id="expansion-6-pin-header-j8">Expansion 6-Pin Header (J8)<a class="headerlink" href="#expansion-6-pin-header-j8" title="Permanent link">&para;</a></h2>
+<p>Connector type: Conn_01×06, 2.54 mm pin header</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+<div style="min-width: 140px; max-width: 200px;">
+<p><img alt="J8 Header" src="../../images/j8_header.png" width="140" /></p>
+</div>
+<div style="flex: 1; min-width: 260px;">
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>PI_GPIO13</td>
+<td>Raspberry Pi GPIO13</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LTE_WAKE#</td>
+<td>LTE modem wake signal (active low)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PI_GPIO12</td>
+<td>Raspberry Pi GPIO12</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+3V3</td>
+<td>3.3V power</td>
+</tr>
+<tr>
+<td>5</td>
+<td>WP</td>
+<td>EEPROM Write protect</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="usb-device-interface-j5">USB device Interface (J5)<a class="headerlink" href="#usb-device-interface-j5" title="Permanent link">&para;</a></h2>
+<p>Connector type: USB Type-C, USB 2.0</p>
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+<div>
+<p><img alt="USB Connector" src="../../images/usb_con.png" width="900" /></p>
+</div>
+<div>
+<p>The USB-C connector serves as the <strong>primary power supply and data interface</strong>.</p>
+<p>An internal 2-port USB hub routes the single connector to two independent device interfaces:</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Connected Device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mosaic G5 USB device interface</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LTE mPCIe USB device interface</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="gnss-antenna-connectors">GNSS Antenna Connectors<a class="headerlink" href="#gnss-antenna-connectors" title="Permanent link">&para;</a></h2>
+<p>iChidori-Crest provides two MMCX antenna connectors for the mosaic-G5 receiver.</p>
+<div style="margin-left: 12px;">
+<p><img alt="GNSS Antenna Connectors" src="../../images/ant_mmcx.png" width="400" /></p>
+</div>
+<p><img alt="Antenna Port Table" src="../../images/ant_table.png" width="700" /></p>
+<div class="admonition note">
+<p class="admonition-title">Antenna supply voltage</p>
+<p>Both ports supply <strong>V_ANT = 3.3 V</strong> DC to power active GNSS antennas.</p>
+</div>
+<h3 id="antenna-mode-setting">Antenna Mode Setting<a class="headerlink" href="#antenna-mode-setting" title="Permanent link">&para;</a></h3>
+<p>iChidori-Crest is offered in variants that differ in antenna capability:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Antenna Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1, P3</td>
+<td>Single-antenna only</td>
+</tr>
+<tr>
+<td>P3H, P6</td>
+<td>Single-antenna or dual-antenna (heading)</td>
+</tr>
+</tbody>
+</table>
+<p>Use the following commands to check or configure the antenna mode:</p>
+<ul>
+<li><code>getFrontendMode</code> — query the current antenna mode</li>
+<li><code>setFrontendMode, SingleAnt</code> — configure single-antenna mode at the next reboot</li>
+<li><code>setFrontendMode, DualAnt</code> — configure dual-antenna (heading) mode at the next reboot</li>
+<li><code>exeCopyConfigFile, Current, Boot</code> — save the configuration to the boot file</li>
+<li><code>exeResetReceiver, Hard, none</code> — reboot to apply</li>
+</ul>
+<p>Connect an active antenna to ANT_1 (MAIN). The ANT_1 input is DC-biased and ESD-protected; an active antenna can be connected directly without additional components. Leave ANT_2 (AUX) open when operating in single-antenna mode.</p>
+<h2 id="sd-logging-j4">SD Logging (J4)<a class="headerlink" href="#sd-logging-j4" title="Permanent link">&para;</a></h2>
+<p>A physical SD card slot is provided for direct on-board logging by the mosaic-G5 receiver.</p>
+<p><img alt="SD Card Connector" src="../../images/sd_con.png" width="400" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This SD logging capability is intended for evaluation and debugging purposes only; it is not recommended for use in production/deployed systems.</p>
+</div>
+<h2 id="sim-card-j10">SIM Card (J10)<a class="headerlink" href="#sim-card-j10" title="Permanent link">&para;</a></h2>
+<p>The board provides a Nano SIM socket for the LTE module.</p>
+<p><img alt="SIM Card Connector" src="../../images/sim_con.png" width="400" /></p>
+<div class="admonition note">
+<p class="admonition-title">SIM slot on the LTE card</p>
+<p>If the installed LTE card has its own SIM slot, the SIM can be inserted directly into that slot instead of the Nano SIM socket on the iChidori-Crest. This allows SIM sizes other than Nano (for example Micro or Mini, depending on the card) to be used. The supported SIM types therefore depend on the LTE card in use.</p>
+</div>
+<h2 id="qwiic-connector-j11">QWIIC Connector (J11)<a class="headerlink" href="#qwiic-connector-j11" title="Permanent link">&para;</a></h2>
+<p>A QWIIC connector is provided for expansion I2C communication.</p>
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+<div>
+<p><img alt="QWIIC Connector" src="../../images/QWIC_con.png" width="220" /></p>
+</div>
+<div>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3V</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SDA</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SCL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between;">
+<p><strong>Back:</strong> <a href="../overview/">← Overview</a></p>
+<p><strong>Next:</strong> <a href="../specifications/">Specifications →</a></p>
+</div>
+<hr />
+<h2 id="quick-navigation">Quick Navigation<a class="headerlink" href="#quick-navigation" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span> <strong><a href="../../">Home</a></strong><br />
+  Welcome and project overview</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 16.5v-9l6 4.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> <strong><a href="../../getting-started/basic-setup/">Getting Started</a></strong><br />
+  Step-by-step setup from unboxing to first fix</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7.5c.69 0 1.27.23 1.76.7s.74 1.07.74 1.8q0 1.575-1.5 2.28V21h-2v-8.72Q9.5 11.575 9.5 10c0-.73.26-1.33.74-1.8s1.07-.7 1.76-.7m4.69-2.2c1.25 1.25 1.92 2.81 2.01 4.7 0 1.8-.67 3.38-2.01 4.72L15.5 13.5c1-.91 1.5-2.08 1.5-3.5 0-1.33-.5-2.5-1.5-3.5zM6.09 4.08C4.5 5.67 3.7 7.64 3.7 10s.8 4.3 2.39 5.89l-1.17 1.22C3 15.08 2 12.7 2 10s1-5.06 2.92-7.09zm12.99-1.17C21 4.94 22 7.3 22 10c0 2.8-1 5.17-2.92 7.11l-1.17-1.22C19.5 14.3 20.3 12.33 20.3 10s-.8-4.33-2.39-5.92zM7.31 5.3 8.5 6.5C7.5 7.42 7 8.58 7 10c0 1.33.5 2.5 1.5 3.5l-1.19 1.22C5.97 13.38 5.3 11.8 5.3 10s.67-3.36 2.01-4.7"/></svg></span> <strong><a href="../../application-examples/clas-madoca/">Application Examples</a></strong><br />
+  RTK, data logger, RxTool experiments</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> <strong><a href="../../troubleshooting/">Troubleshooting</a></strong><br />
+  Common issues and fixes</p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+      
+    
+  </body>
+</html>
