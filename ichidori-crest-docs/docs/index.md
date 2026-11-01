@@ -23,12 +23,12 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
 | **GNSS Module** | Septentrio mosaic-G5 — multi-constellation, multi-frequency GNSS receiver  |
 | **Antenna Connectors** | Main and auxiliary MMCX antenna connections |
 | **LTE mPCIe Slot** | PCI Express Mini Card slot for an LTE modem, with an onboard nano-SIM socket |
-| **MicroSD Card Slot** | On-board microSD slot for GNSS data logging directly to removable storage |
+| **MicroSD Card Slot** | On-board microSD slot for GNSS data logging |
 | **40-Pin GPIO Header** | Standard Raspberry Pi HAT connector — fits Raspberry Pi 4 and 5 |
 | **Power Supply** | USB-C 5V, External VIN 6–24V, or Pi 5V rail |
 
 
-## Board Variants
+## Common Use Cases
 
 === "HAT Only"
     Use iChidori-Crest board standalone
