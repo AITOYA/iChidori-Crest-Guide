@@ -73,3 +73,6 @@ nav:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_head:
+  - '<meta name="google-site-verification" content="WPis9VjaGdQ-P_TmHKT1ttHvTCH1S6-ggPWsHH97VAI" />'
