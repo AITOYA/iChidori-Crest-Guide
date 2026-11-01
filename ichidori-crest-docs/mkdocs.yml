@@ -7,6 +7,7 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - scheme: default
       primary: indigo
@@ -66,13 +67,9 @@ nav:
     - Data Logging: getting-started/sd-logging.md
     - Connect to a Raspberry Pi: getting-started/pi-connect.md
     - LTE Connectivity: getting-started/lte-setup.md
-    #- Remote Access: getting-started/remote-access.md
   - Application Examples:
     - CLAS-MADOCA: application-examples/clas-madoca.md
   - Troubleshooting: troubleshooting.md
 
 extra_css:
   - stylesheets/extra.css
-
-extra_head:
-  - '<meta name="google-site-verification" content="WPis9VjaGdQ-P_TmHKT1ttHvTCH1S6-ggPWsHH97VAI" />'
