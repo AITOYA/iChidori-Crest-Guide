@@ -13,7 +13,7 @@ Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin GPIO header
 
 ![40-pin Header](../images/40pin_header_1.png){ width="800" }
 
-![40-pin Header](../images/40pin_header_2.png){ width="790", style="margin-left: 8px;"}
+![40-pin Header](../images/40pin_header_2.png){ width="800"}
 
 ### UART Interfaces Summary
 
@@ -26,7 +26,7 @@ Mating connector: Raspberry Pi 4/5 Model B built-in 40-pin GPIO header
 !!! note "Serial port configuration"
     Raspberry Pi 4/5 has UART0–UART5, but most are disabled by default and require additional configuration.
 
-    To enable UART on GPIO14/GPIO15 (TXD/RXD) for mosaic-G5 COM1:
+    To enable UART on GPIO14 / GPIO15 (TXD / RXD) to communicate with mosaic-G5 COM1:
 
     1. Run `sudo raspi-config`
     2. Select **Interface Options** → **Serial Port**
@@ -170,13 +170,16 @@ Use the following commands to check or configure the antenna mode:
 
 Connect an active antenna to ANT_1 (MAIN). The ANT_1 input is DC-biased and ESD-protected; an active antenna can be connected directly without additional components. Leave ANT_2 (AUX) open when operating in single-antenna mode.
 
+!!! warning
+    `setFrontendMode` only takes effect at the next reset or reboot. The configuration must be saved to the boot file before rebooting.
+
 ## SD Logging (J4)
 A physical SD card slot is provided for direct on-board logging by the mosaic-G5 receiver.
 
 ![SD Card Connector](../images/sd_con.png){ width="400" }
 
 !!! note
-    This SD logging capability is intended for evaluation and debugging purposes only; it is not recommended for use in production/deployed systems.
+    This SD logging capability is intended for evaluation and debugging purposes only; it is not recommended for use in production/deployed systems. The SD card must be formatted as **FAT32** before use.
 
 ## SIM Card (J10)
 

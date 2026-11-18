@@ -4,13 +4,13 @@
 
 Designed for Raspberry Pi 4/5, iChidori-Crest provides a flexible hardware platform for RTK positioning, remote monitoring, and GNSS-based applications. It is available in variants — P1, P3, P3H, and P6 — sharing the same board hardware while offering different GNSS receiver capabilities.
 
-![iChidori-Crest Board](images/board-top.png){ width="820", style="margin-left: 0px;"}
+![iChidori-Crest Board](images/board-top.png){ width="850", style="margin-left: 0px;"}
 
 ## Powered by the Next-Generation Septentrio mosaic-G5
 
 At the heart of iChidori-Crest is the [Septentrio mosaic-G5](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6), a new generation of ultra-compact, high-performance GNSS receiver modules. Combining multi-constellation, multi-frequency satellite tracking with centimeter-level RTK positioning, mosaic-G5 brings advanced positioning capabilities to space- and power-constrained systems.
 
-Compared with the mosaic-X5, mosaic-G5 offers a **60% smaller module footprint and 40% lower power consumption**, while maintaining high-precision positioning performance. Depending on the receiver variant, the series supports tracking of up to four frequencies, output rates of up to 100 Hz, and [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060), advanced [GNSS+ algorithms](https://www.septentrio.com/en/learn-more/Advanced-positioning-technology/gnss-technology) for enhanced resilience against interference and spoofing.
+Compared with the mosaic-X5, mosaic-G5 offers a **60% smaller module footprint and 40% lower power consumption**, while maintaining high-precision positioning performance. Depending on the receiver variant, the series supports tracking of up to quad-frequencies, output rates of up to 100 Hz, and [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060), advanced [GNSS+ algorithms](https://www.septentrio.com/en/learn-more/Advanced-positioning-technology/gnss-technology) for enhanced resilience against interference and spoofing.
 
 These capabilities make mosaic-G5 well suited for compact RTK systems, robotics, autonomous platforms, and other applications where positioning performance, reliability, size, and power efficiency are critical.
 
@@ -50,6 +50,10 @@ These capabilities make mosaic-G5 well suited for compact RTK systems, robotics,
   </div>
     <a href="documents/iChidori_Crest_Hardware_Reference_Manual_EN.pdf" download style="background: #1976d2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.85rem; white-space: nowrap; flex-shrink: 0;">DOWNLOAD</a>
 </div>
+
+<div markdown style="text-align: right;">
+
+**Next:** [Hardware Overview →](hardware-reference/overview.md)
 
 ---
 

@@ -381,8 +381,9 @@ Example output:
 
 ## Summary
 
-This guide demonstrated how to configure LTE connectivity on the iChidori-Crest using the Quectel EC21-J modem and a mineo SIM on the au (KDDI) network.
+This guide covered configuring LTE connectivity on the iChidori-Crest using the Quectel EC21-J modem and a mineo SIM on the au (KDDI) network. Once the connection is active, the Raspberry Pi has outbound internet access and can reach external services over the mobile network without a wired LAN connection.
 
-Once configured, the Raspberry Pi can access the Internet through the LTE network without requiring a wired LAN connection.
+The same configuration approach applies to other supported LTE modems and SIM providers by adjusting the APN credentials and any modem-specific settings.
 
-The same configuration approach can be adapted for other supported LTE modems and SIM providers by adjusting the modem-specific settings and APN credentials.
+!!! note "Remote access over LTE"
+    LTE alone does not make the device remotely accessible. To connect via SSH or VNC over the mobile network, an additional tunnelling setup such as [Tailscale](https://tailscale.com) is required — this is covered in a future guide.
